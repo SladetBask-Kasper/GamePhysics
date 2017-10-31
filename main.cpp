@@ -7,14 +7,13 @@
 #include <string.h>
 #include "physics.h"
 #include "commands.h"
-//#include "basic.hpp" // basic.hpp used to be a testing playground!
 
 // constant integers that don't need to be changed!
 #define FLOOR 0 // Don't CHANGE!!!!
 #define ROOF 256 // The Rest can be changed a little bit.
 #define XLIMITLEFT -256
 #define XLIMITRIGHT 256
-#define inputMsg "input: " // You Can Change This To What Ever U want!
+#define INPUTMSG "input: " // You Can Change This To What Ever U want!
 
 using namespace std;
 
@@ -159,7 +158,7 @@ int main() {
 
 	while (true) {
 
-		cout << inputMsg;
+		cout << INPUTMSG;
 		//cin >> in;
 		getline(cin, in);
 		//cout << endl;
