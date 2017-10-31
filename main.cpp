@@ -5,8 +5,9 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
-#include "physics.h"
-#include "commands.h"
+#include "normal/headers/physics.h"
+#include "normal/headers/commands.h"
+#include "normal/headers/functions.h"
 
 // constant integers that don't need to be changed!
 #define FLOOR 0 // Don't CHANGE!!!!
@@ -15,8 +16,24 @@
 #define XLIMITRIGHT 256
 #define INPUTMSG "input: " // You Can Change This To What Ever U want!
 #define DEFAULT_WATER_WALK_SPEED 2
+#define CLEAR_SCREEN "clear"
 
 using namespace std;
+
+///
+/// CuPo is a fucntion that was made to print the CUrrent POsison (CURRENT PLAYER POSISON).
+///
+void CuPo() {
+	cout << "CURRENT PLAYER X POSISON : " << x << " CURRENT PLAYER Z POSISON : " << z << endl;
+}
+
+///
+/// Got Sick of Typeing CuPo every time i wanted curent Posison. Now Both work!
+/// I am to lazy to remove every time CuPo was mentioned.
+///
+void cp() {
+	CuPo();
+}
 
 ///
 /// Makes Your Caracter Jump/Incresses z/hight cordinet.
@@ -77,11 +94,6 @@ void walk(string in) {
 }
 
 ///
-/// Does nothing
-///
-void pass() {return;}
-
-///
 /// Makes It So You Can't Walk Of The Edge Of The World.
 ///
 bool walls() {
@@ -103,36 +115,6 @@ bool walls() {
 	return true;
 
 }
-
-///
-/// A Function That Prints Something out on the screen and then exits
-/// Mainly Used For errors. Can Be used for other things.
-///
-bool error(string txt_arg0_) {
-	cout << txt_arg0_ << endl;
-	exit(0);
-}
-
-///
-/// You Will Never Be able to guess what this functon does.
-/// It Removes Spaces!
-///
-string remove_spaces(string str)
-{
-	for(int i=0; str[i]; i++)
-		if(str[i] == ' ') str[i] = '\b';
-	return str;
-}
-
-///
-/// Wins.
-///
-/*void win() {
-	if (x == winx && z == winz)
-		error("YOU WIN!"); // Error Prints Something And Exits. It does not mean that it needs to be an error :)
-}*/
-
-
 
 ///
 /// Main fucntion. Where All The Main C0de B @.
@@ -172,7 +154,7 @@ int main() {
 		else if (in == "backward" || in == "b" || in == "backwards")
 			walk(in);
 		else if (in == "clear" || in == "cls")
-			system("clear");
+			system(CLEAR_SCREEN);
 		else if (in == "exit") {
 			break;
 		}
@@ -187,7 +169,7 @@ int main() {
 			z = 0;
 			in = "";
 
-			system("clear");
+			system("CLEAR_SCREEN");
 			break;
 		}
 		else if (in[0] == '#') {

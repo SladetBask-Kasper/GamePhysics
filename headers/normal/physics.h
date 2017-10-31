@@ -19,21 +19,6 @@ int x = 1;
 int z = 1;
 
 ///
-/// CuPo is a fucntion that was made to print the CUrrent POsison (CURRENT PLAYER POSISON).
-///
-void CuPo() {
-	cout << "CURRENT PLAYER X POSISON : " << x << " CURRENT PLAYER Z POSISON : " << z << endl;
-}
-
-///
-/// Got Sick of Typeing CuPo every time i wanted curent Posison. Now Both work!
-/// I am to lazy to remove every time CuPo was mentioned.
-///
-void cp() {
-	CuPo();
-}
-
-///
 /// initilize objects / change objects = true
 ///
 bool init_objects() {
