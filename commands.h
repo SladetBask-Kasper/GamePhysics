@@ -4,7 +4,7 @@
 bool fly_gra = false; // fly/gravety = false // Default makes flying / no gravity imposible
 bool onc_wallz = false; // makes it so you cannot go pass the broder +256x and -256x
 
-bool readInput(string in) {
+void readInput(string in) {
 
 	if (in == ".spawn") {
 		x = 1;
@@ -53,5 +53,5 @@ bool readInput(string in) {
 		cout << "INVALID [DOT] COMMAND" << endl;
 	}
 
-	return true;
+	return;
 }
