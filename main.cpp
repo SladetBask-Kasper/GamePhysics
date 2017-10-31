@@ -14,6 +14,7 @@
 #define XLIMITLEFT -256
 #define XLIMITRIGHT 256
 #define INPUTMSG "input: " // You Can Change This To What Ever U want!
+#define DEFAULT_WATER_WALK_SPEED 2
 
 using namespace std;
 
@@ -76,6 +77,11 @@ void walk(string in) {
 }
 
 ///
+/// Does nothing
+///
+void pass() {return;}
+
+///
 /// Makes It So You Can't Walk Of The Edge Of The World.
 ///
 bool walls() {
@@ -113,8 +119,6 @@ bool error(string txt_arg0_) {
 ///
 string remove_spaces(string str)
 {
- //&input.erase(std::remove(input.begin(),input.end(),' '),input.end());
-	//auto rs = std::regex_replace(input,std::regex("\\s+"), "");
 	for(int i=0; str[i]; i++)
 		if(str[i] == ' ') str[i] = '\b';
 	return str;
@@ -150,20 +154,13 @@ int main() {
 	Load();
 
 	// Place Down Objects...
-
-	bool water01 = water(-6, FLOOR + 1, x, z, 3);
-	if (water01 == false) {
-		error("WATER ERORR");
-	}
+	water water01(-6, FLOOR + 1, DEFAULT_WATER_WALK_SPEED);
 
 	while (true) {
 
 		cout << INPUTMSG;
-		//cin >> in;
 		getline(cin, in);
-		//cout << endl;
 
-		//if (ifht(in) == true)
 		in = remove_spaces(in);
 
 		//cout << "INPUT RECIVED : '" << in << "'" << endl;
@@ -177,7 +174,7 @@ int main() {
 		else if (in == "clear" || in == "cls")
 			system("clear");
 		else if (in == "exit") {
-			return 0;
+			break;
 		}
 		else if (in == "reset_cord" || in == "rc") {
 			x = 1;
@@ -191,17 +188,15 @@ int main() {
 			in = "";
 
 			system("clear");
-			return 0;
+			break;
 		}
 		else if (in[0] == '#') {
 			in = "";
-			//cout << "found '#'..." << endl; // <-- Debug Stuff
 		}
 		else if (in == "") {
-
+			pass();
 		}
-		else if (in[0] == '.') { // .at(0)
-			//cout << "Found \".\" | " << in[0] << " | " << in << endl;
+		else if (in[0] == '.') {
 			readInput(in);
 		}
 		else if (in == "getCord") {
@@ -216,16 +211,9 @@ int main() {
 		if (onc_wallz == false)
 			walls();
 
-		water01 = water(-6, FLOOR + 1, x, z, 2);
-		if (water01 == false) {
-			error("WATER ERROR");
-		}
-
-
-		//cout << endl;
+		water01.check(x, z);
 
 	}
 	Exit();
 	return EXIT_SUCCESS;
 }
-//

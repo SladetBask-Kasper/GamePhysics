@@ -54,30 +54,33 @@ void err(string txt_) {
 	exit(0);
 }
 
-///
-/// Checks objects variable.
-///
-void checko() {
-	if (objects != true) {
-		err("\n\n\n\n\n: err : OBJECT CALLED WHILE OBJECTS NOT ALLOWED\n\n\n\n\n");
-	}
-}
-
 // Objects...
 
 ///
 /// a water object
 ///
-bool water(int x, int z, int px, int pz, int speed) {
+class water {
+protected:
+	int px = 0;
+	int pz = 0;
+	int speed = 0;
+public:
 
-	checko();
-
-	if (x == px && z == pz) {
-		cout << "player Is steping through water. This Will Take A While" << endl;
-		sleep(speed);
+	water(int _px, int _pz, int _speed) {
+		px = _px;
+		pz = _pz;
+		speed = _speed;
 	}
-	return true;
-}
+	void check(int x, int z) {
+
+		if (x == px && z == pz) {
+			cout << "player Is steping through water. This Might Take A While" << endl;
+			sleep(speed);
+		}
+	}
+	virtual ~water() {};
+};
+
 
 // </Objects>
 
