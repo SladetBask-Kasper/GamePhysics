@@ -10,28 +10,13 @@
 //#include "basic.hpp" // basic.hpp used to be a testing playground!
 
 // constant integers that don't need to be changed!
-#define floor 0 // Don't CHANGE!!!!
-#define roof 256 // The Rest can be changed a little bit.
-#define xlimitLeft -256
-#define xlimitRight 256
+#define FLOOR 0 // Don't CHANGE!!!!
+#define ROOF 256 // The Rest can be changed a little bit.
+#define XLIMITLEFT -256
+#define XLIMITRIGHT 256
 #define inputMsg "input: " // You Can Change This To What Ever U want!
 
 using namespace std;
-
-///
-/// CuPo is a fucntion that was made to print the CUrrent POsison (CURRENT PLAYER POSISON).
-///
-void CuPo() {
-	cout << "CURRENT PLAYER X POSISON : " << x << " CURRENT PLAYER Z POSISON : " << z << endl;
-}
-
-///
-/// Got Sick of Typeing CuPo every time i wanted curent Posison. Now Both work!
-/// I am to lazy to remove every time CuPo was mentioned.
-///
-void cp() {
-	CuPo();
-}
 
 ///
 /// Makes Your Caracter Jump/Incresses z/hight cordinet.
@@ -52,7 +37,7 @@ bool jump() {
 ///
 bool gravity() {
 
-	if (z > floor + 1) {
+	if (z > FLOOR + 1) {
 		cout << "PLAYER IS FALLING... ";
 		z--;
 		sleep(1);
@@ -96,14 +81,14 @@ void walk(string in) {
 ///
 bool walls() {
 
-	if (x < xlimitLeft + 1) {
+	if (x < XLIMITLEFT + 1) {
 		cout << "There Is A Wall There My Fam. ";
 		x++;
 		x++;
 		x++;
 		cp();
 	}
-	if (x > xlimitRight + 1) {
+	if (x > XLIMITRIGHT + 1) {
 		cout << "Thats A Wall Mate! ";
 		x--;
 		x--;
@@ -144,23 +129,20 @@ string remove_spaces(string str)
 		error("YOU WIN!"); // Error Prints Something And Exits. It does not mean that it needs to be an error :)
 }*/
 
-string tux() {
-	cout << "Linux Is The Best!" << endl;
-	return "Linux Is The Best!";
-}
+
 
 ///
 /// Main fucntion. Where All The Main C0de B @.
 ///
 int main() {
 
-	if (floor != 0)
+	if (FLOOR != 0)
 		error("TO LOW/HIGH FLOOR");
-	if (xlimitLeft > 0)
+	if (XLIMITLEFT > 0)
 		error("xL TO SMALL World");
-	if (xlimitRight < 1)
+	if (XLIMITRIGHT < 1)
 		error("xR TO SMALL World");
-	if (roof < 1)
+	if (ROOF < 1)
 		error("ROOF TO SMALL World");
 
 	string in = "";
@@ -170,7 +152,7 @@ int main() {
 
 	// Place Down Objects...
 
-	bool water01 = water(-6, floor + 1, x, z, 3);
+	bool water01 = water(-6, FLOOR + 1, x, z, 3);
 	if (water01 == false) {
 		error("WATER ERORR");
 	}
@@ -219,9 +201,6 @@ int main() {
 		else if (in == "") {
 
 		}
-		else if (in == "tux()") {
-			tux();
-		}
 		else if (in[0] == '.') { // .at(0)
 			//cout << "Found \".\" | " << in[0] << " | " << in << endl;
 			readInput(in);
@@ -238,7 +217,7 @@ int main() {
 		if (onc_wallz == false)
 			walls();
 
-		water01 = water(-6, floor + 1, x, z, 2);
+		water01 = water(-6, FLOOR + 1, x, z, 2);
 		if (water01 == false) {
 			error("WATER ERROR");
 		}
@@ -247,5 +226,7 @@ int main() {
 		//cout << endl;
 
 	}
+	Exit();
+	return EXIT_SUCCESS;
 }
 //

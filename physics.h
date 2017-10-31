@@ -18,27 +18,19 @@ bool objects = false;
 int x = 1;
 int z = 1;
 
+///
+/// CuPo is a fucntion that was made to print the CUrrent POsison (CURRENT PLAYER POSISON).
+///
+void CuPo() {
+	cout << "CURRENT PLAYER X POSISON : " << x << " CURRENT PLAYER Z POSISON : " << z << endl;
+}
 
-void print(string txt_ = "") {
-	cout << txt_ << endl;
-}
-void print(int txt_ = 0) {
-	cout << txt_ << endl;
-}
-void print(float txt_ = 0.0) {
-	cout << txt_ << endl;
-}
-void print(double txt_ = 0.0) {
-	cout << txt_ << endl;
-}
-void print(int * txt_ = 0) {
-	cout << txt_ << endl;
-}
-/*void print(char * txt_ = "") {
-	cout << txt_ << endl;
-}*/
-void print(char txt_ = 'C') {
-	cout << txt_ << endl;
+///
+/// Got Sick of Typeing CuPo every time i wanted curent Posison. Now Both work!
+/// I am to lazy to remove every time CuPo was mentioned.
+///
+void cp() {
+	CuPo();
 }
 
 ///
@@ -87,6 +79,8 @@ bool water(int x, int z, int px, int pz, int speed) {
 	return true;
 }
 
+// </Objects>
+
 void Load() {
 	// Prints Startup Messege
 	system("clear");
@@ -94,4 +88,7 @@ void Load() {
 	// initilize Objects
 	init_objects();
 
+}
+void Exit() {
+    cout << "Bye!" << endl;
 }
