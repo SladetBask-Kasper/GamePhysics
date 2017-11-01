@@ -20,6 +20,10 @@
 
 using namespace std;
 
+
+// ----------------------------------------------------
+
+
 ///
 /// CuPo is a fucntion that was made to print the CUrrent POsison (CURRENT PLAYER POSISON).
 ///
@@ -117,7 +121,7 @@ bool walls() {
 }
 
 ///
-/// Main fucntion. Where All The Main C0de B @.
+/// Main fucntion. Where All The Main C0D3 B @.
 ///
 int main() {
 
