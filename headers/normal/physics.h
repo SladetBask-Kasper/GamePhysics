@@ -11,24 +11,9 @@
 
 using namespace std;
 
-/// if objects are enabled or not
-bool objects = false;
-
 // Posison Cordenets
 int x = 1;
 int z = 1;
-
-///
-/// initilize objects / change objects = true
-///
-bool init_objects() {
-
-	if (objects == false)
-		objects = true;
-	else
-		return false;
-	return true;
-}
 
 ///
 /// an error function / prints something and quits
@@ -39,46 +24,29 @@ void err(string txt_) {
 	exit(0);
 }
 
-// Objects...
-
 ///
-/// a water object
+/// Consturctor called when loading program.
 ///
-class water {
-protected:
-	int px = 0;
-	int pz = 0;
-	int speed = 0;
-	string texture = "headers/gfx/Textures/std/untextured.jpg";
-public:
-
-	water(int _px, int _pz, int _speed, _texture = "headers/gfx/Textures/std/untextured.jpg") {
-		px = _px;
-		pz = _pz;
-		speed = _speed;
-		texture = _texture;
-	}
-	void check(int x, int z) {
-
-		if (x == px && z == pz) {
-			cout << "player Is steping through water. This Might Take A While" << endl;
-			sleep(speed);
-		}
-	}
-	virtual ~water() {};
-};
-
-
-// </Objects>
-
 void Load() {
+
 	// Prints Startup Messege
 	system("clear");
 	cout << "\n\".help\" = For Help!" << endl << endl;
-	// initilize Objects
-	init_objects();
 
 }
+
+///
+/// Deconstructor called on exit.
+///
 void Exit() {
     cout << "Bye!" << endl;
+}
+///
+/// A Function That Prints Something out on the screen and then exits
+/// Mainly Used For errors. Can Be used for other things.
+///
+bool error(string txt_arg0_) {
+	cout << txt_arg0_ << endl;
+	Exit();
+	exit(0);
 }

@@ -1,3 +1,9 @@
+///
+/// Note: This is the file you wanna compile.
+///
+
+
+// standard includes
 #include <iostream>
 #include <string>
 #include <sstream>
@@ -5,9 +11,14 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
-#include "normal/headers/physics.h"
-#include "normal/headers/commands.h"
-#include "normal/headers/functions.h"
+
+// normal files
+#include "headers/normal/physics.h"
+#include "headers/normal/commands.h"
+#include "headers/normal/functions.h"
+
+//objects
+#include "headers/objects/water.h"
 
 // constant integers that don't need to be changed!
 #define FLOOR 0 // Don't CHANGE!!!!
@@ -19,10 +30,6 @@
 #define CLEAR_SCREEN "clear"
 
 using namespace std;
-
-
-// ----------------------------------------------------
-
 
 ///
 /// CuPo is a fucntion that was made to print the CUrrent POsison (CURRENT PLAYER POSISON).
@@ -87,7 +94,7 @@ void walk(string in) {
 	else if (in == "backward" || in == "b") {
 
 		// Stuff Left From Debuging...
-		// if (x == 0)
+		//if (x == 0)
 		//	x = -250;
 
 		x--;

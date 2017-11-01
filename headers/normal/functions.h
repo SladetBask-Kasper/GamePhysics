@@ -15,12 +15,3 @@ std::string remove_spaces(std::string str)
 /// Does nothing
 ///
 void pass() {return;}
-
-///
-/// A Function That Prints Something out on the screen and then exits
-/// Mainly Used For errors. Can Be used for other things.
-///
-bool error(string txt_arg0_) {
-	cout << txt_arg0_ << endl;
-	exit(0);
-}
