@@ -30,23 +30,15 @@
 #define XLIMITRIGHT 256
 #define INPUTMSG "input: " // You Can Change This To What Ever U want!
 #define DEFAULT_WATER_WALK_SPEED 2
-#define CLEAR_SCREEN "clear"
+#define CLEAR_SCREEN "clear" // On win32 cange to "cls"
 
 using namespace std;
 
 ///
-/// CuPo is a fucntion that was made to print the CUrrent POsison (CURRENT PLAYER POSISON).
-///
-void CuPo() {
-	cout << "CURRENT PLAYER X POSISON : " << x << " CURRENT PLAYER Z POSISON : " << z << endl;
-}
-
-///
-/// Got Sick of Typeing CuPo every time i wanted curent Posison. Now Both work!
-/// I am to lazy to remove every time CuPo was mentioned.
+/// cp is a function that was made to print the Current Posison (CURRENT PLAYER POSISON).
 ///
 void cp() {
-	CuPo();
+	cout << "CURRENT PLAYER X POSISON : " << x << " CURRENT PLAYER Z POSISON : " << z << endl;
 }
 
 ///
@@ -58,7 +50,7 @@ bool jump() {
 	z++;
 
 	cout << "PLAYER JUMPED. ";
-	CuPo();
+	cp();
 
 	return true;
 }
@@ -73,7 +65,7 @@ bool gravity() {
 		z--;
 		sleep(1);
 		cout << "PLAYER LANDED. ";
-		CuPo();
+		cp();
 	}
 
 	return true;
@@ -92,7 +84,7 @@ void walk(string in) {
 
 		x++;
 		cout << "PLAYER WALKED FORWARDS. ";
-		CuPo();
+		cp();
 	}
 	else if (in == "backward" || in == "b") {
 
@@ -102,7 +94,7 @@ void walk(string in) {
 
 		x--;
 		cout << "PLAYER WALKED BACKWARDS. ";
-		CuPo();
+		cp();
 	}
 
 }
@@ -149,7 +141,8 @@ int main() {
 
 	// Place Down Objects...
 	water water01(-6, FLOOR + 1, DEFAULT_WATER_WALK_SPEED, NO_TEXTURE);
-	while (true) {
+
+	while (!ExitStatus) {
 
 		cout << INPUTMSG;
 		getline(cin, in);
@@ -167,7 +160,7 @@ int main() {
 		else if (in == "clear" || in == "cls")
 			system(CLEAR_SCREEN);
 		else if (in == "exit") {
-			break;
+			ExitStatus = true;
 		}
 		else if (in == "reset_cord" || in == "rc") {
 			x = 1;
@@ -181,7 +174,7 @@ int main() {
 			in = "";
 
 			system(CLEAR_SCREEN);
-			break;
+			ExitStatus = true;
 		}
 		else if (in[0] == '#') {
 			in = "";
@@ -198,14 +191,12 @@ int main() {
 		else
 			cout << "INVALID COMMAND..." << endl;
 
-		//win();
 		if (fly_gra == false)
 			gravity();
 		if (onc_wallz == false)
 			walls();
 
 		water01.check(x, z);
-
 	}
 	Exit();
 	return EXIT_SUCCESS;

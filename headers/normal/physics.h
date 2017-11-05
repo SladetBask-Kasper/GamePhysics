@@ -15,6 +15,7 @@ using namespace std;
 // Posison Cordenets
 int x = 1;
 int z = 1;
+bool ExitStatus = false;
 
 ///
 /// an error function / prints something and quits
@@ -22,6 +23,7 @@ int z = 1;
 void err(string txt_) {
 
 	cout << txt_ << endl;
+	ExitStatus = true; // Might Be Good When we start getting into threads
 	exit(0);
 }
 
@@ -51,3 +53,8 @@ bool error(string txt_arg0_) {
 	Exit();
 	exit(0);
 }
+
+///
+/// The resorce handler will handel resorces.
+///
+//void resorcehandler() {}

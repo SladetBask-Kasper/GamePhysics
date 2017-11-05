@@ -1,6 +1,10 @@
 #ifndef TEXTURE_H
 #define TEXTURE_H
 #pragma once
+#include <iostream>
+#include <string>
+#include <vector>
+
 #define NO_TEXTURE "!ROOT!/headers/gfx/Textures/std/untextured.jpg"
 //#define NO_TEXTURE "!ROOT!/data/textures/std/untextured.jpg"
 
@@ -17,4 +21,5 @@ public:
     void update(ttexture texture_) { text = texture_; }
     virtual ~texture() {}
 };
+
 #endif // TEXTURE_H
