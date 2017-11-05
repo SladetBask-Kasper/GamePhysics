@@ -1,3 +1,4 @@
+#pragma once
 #define s_buffer 256
 #define b_buffer 1024
 

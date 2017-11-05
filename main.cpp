@@ -20,6 +20,9 @@
 //objects
 #include "headers/objects/water.h"
 
+//gfx
+//#include "headers/gfx/Textures/texture.h"
+
 // constant integers that don't need to be changed!
 #define FLOOR 0 // Don't CHANGE!!!!
 #define ROOF 256 // The Rest can be changed a little bit.
@@ -113,12 +116,10 @@ bool walls() {
 		cout << "There Is A Wall There My Fam. ";
 		x++;
 		x++;
-		x++;
 		cp();
 	}
 	if (x > XLIMITRIGHT + 1) {
 		cout << "Thats A Wall Mate! ";
-		x--;
 		x--;
 		x--;
 		cp();
@@ -147,8 +148,7 @@ int main() {
 	Load();
 
 	// Place Down Objects...
-	water water01(-6, FLOOR + 1, DEFAULT_WATER_WALK_SPEED);
-
+	water water01(-6, FLOOR + 1, DEFAULT_WATER_WALK_SPEED, NO_TEXTURE);
 	while (true) {
 
 		cout << INPUTMSG;
@@ -180,7 +180,7 @@ int main() {
 			z = 0;
 			in = "";
 
-			system("CLEAR_SCREEN");
+			system(CLEAR_SCREEN);
 			break;
 		}
 		else if (in[0] == '#') {

@@ -1,22 +1,27 @@
 ///
 /// a water object
 ///
+#ifndef WATER_H
+#define WATER_H
+#pragma once
 #include <string>
 #include <iostream>
+
+#include "../gfx/Textures/texture.h"
 
 class water {
 protected:
 	int px = 0;
 	int pz = 0;
 	int speed = 0;
-	std::string texture = "headers/gfx/Textures/std/untextured.jpg";
+	texture waterTexture = texture(NO_TEXTURE);
 public:
 
-	water(int _px, int _pz, int _speed, std::string _texture = "headers/gfx/Textures/std/untextured.jpg") {
+	water(int _px, int _pz, int _speed, ttexture _texture = NO_TEXTURE) {
 		px = _px;
 		pz = _pz;
 		speed = _speed;
-		texture = _texture;
+		waterTexture.update(_texture);
 	}
 	void check(int x, int z) {
 
@@ -27,3 +32,5 @@ public:
 	}
 	virtual ~water() {};
 };
+
+#endif // WATER_H

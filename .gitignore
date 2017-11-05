@@ -1,3 +1,6 @@
 *.IGONRE
 a.out
 *.compiled
+*.done
+*.done.*
+compiled
