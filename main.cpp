@@ -2,7 +2,6 @@
 /// Note: This is the file you wanna compile.
 ///
 
-
 // standard includes
 #include <iostream>
 #include <string>
