@@ -9,6 +9,8 @@
 
 #include "../gfx/Textures/texture.h"
 
+#define DEFAULT_WATER_WALK_SPEED 2
+
 class water {
 protected:
 	int px = 0;
@@ -17,7 +19,7 @@ protected:
 	texture waterTexture = texture(NO_TEXTURE);
 public:
 
-	water(int _px, int _pz, int _speed, ttexture _texture = NO_TEXTURE) {
+	water(int _px, int _pz, int _speed, std::string _texture = NO_TEXTURE) {
 		px = _px;
 		pz = _pz;
 		speed = _speed;

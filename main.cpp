@@ -16,10 +16,10 @@
 #include "headers/normal/commands.h"
 #include "headers/normal/functions.h"
 
-//objects
+// objects
 #include "headers/objects/water.h"
 
-//gfx
+// gfx
 //#include "headers/gfx/Textures/texture.h"
 
 // constant integers that don't need to be changed!
@@ -28,7 +28,6 @@
 #define XLIMITLEFT -256
 #define XLIMITRIGHT 256
 #define INPUTMSG "input: " // You Can Change This To What Ever U want!
-#define DEFAULT_WATER_WALK_SPEED 2
 #define CLEAR_SCREEN "clear" // On win32 cange to "cls"
 
 using namespace std;
