@@ -15,7 +15,10 @@ public:
     texture(std::string texture_ = NO_TEXTURE) { text = texture_; }
     texture operator=(std::string texture_) { text = texture_; }
     texture get() { return text; }
-    void update(std::string texture_) { text = texture_; }
+    void update(std::string texture_) {
+        std::string str = texture_;
+        text = str; 
+    }
     virtual ~texture() {}
 } texture;
 

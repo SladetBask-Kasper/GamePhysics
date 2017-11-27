@@ -20,7 +20,6 @@
 #include "headers/objects/water.h"
 
 // gfx
-//#include "headers/gfx/Textures/texture.h"
 
 // constant integers that don't need to be changed!
 #define FLOOR 0 // Don't CHANGE!!!!
