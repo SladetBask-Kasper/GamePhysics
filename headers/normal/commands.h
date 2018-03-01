@@ -1,3 +1,8 @@
+//
+// Commands and cheat codes,
+// When Graphics get added, this will probably stay but in some sort of console insted.
+//
+
 #pragma once
 #define s_buffer 256
 #define b_buffer 1024
@@ -36,7 +41,7 @@ void readInput(string in) {
 			" * jump : jumps [j]\n"
 			" * clear : clears all the text on the screen [cls]\n"
 			" * exit : exits the program []\n"
-			" * clex : clears screen and exits and cleans up program (recomended) [clearexit]\n";
+			" * clex : clears screen and exits and cleans up program. [clearexit]\n";
 		const char *dotsyntax =
 			" * -------[DOT] Syntax-------\n"
 			" * .help : help menu\n"

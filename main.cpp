@@ -69,7 +69,7 @@ bool gravity() {
 }
 
 ///
-/// Makes You Caracter Walk/Incresses x/floor Cordenet
+/// Makes You Caracter Walk aka Incresses x/floor Cordenet
 ///
 void walk(string in) {
 
@@ -148,6 +148,8 @@ int main() {
 
 		//cout << "INPUT RECIVED : '" << in << "'" << endl;
 
+		// Commands.
+		// Note: This will be replaced by keyboard input.
 		if (in == "jump" || in == "j")
 			jump();
 		else if (in == "forward" || in == "f" || in == "forwards")

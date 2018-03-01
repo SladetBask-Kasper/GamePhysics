@@ -1,6 +1,7 @@
 *.IGONRE
+*.IGNORE.*
 a.out
 *.compiled
-*.done
-*.done.*
+*.ign
+*.ign.*
 compiled

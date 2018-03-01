@@ -1,3 +1,7 @@
+//
+// This will have some standard stuff that all your games will most likely want to have
+//
+
 #pragma once
 #include <iostream>
 #include <string>

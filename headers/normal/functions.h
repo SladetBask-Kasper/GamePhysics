@@ -1,3 +1,7 @@
+//
+// Just any function that I might use at multible places and want to have it one place.
+//
+
 #pragma once
 #include <string>
 
